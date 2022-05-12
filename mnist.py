@@ -48,6 +48,7 @@ def main():
 
 	#get testing labels
 	test_label = test_data_.targets.numpy()
+	test_label = test_label.reshape(10000, 1)
 
 	#apply dimensionality reduction
 	if args.method == 'pca':
@@ -57,7 +58,8 @@ def main():
 	elif args.method == 'tsne':
 		test_data = TSNE_(test_data)
 
-	print(test_data)
+	result = np.concatenate((test_data, test_label), axis=1)
+	np.savetxt(args.method + ".csv", result, delimiter=',', fmt=['%.5f', '%.5f', '%d'])
 
 if __name__ == "__main__":
 	main()
