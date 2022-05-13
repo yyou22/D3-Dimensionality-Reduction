@@ -59,7 +59,7 @@ def main():
 		test_data = TSNE_(test_data)
 
 	result = np.concatenate((test_data, test_label), axis=1)
-	np.savetxt(args.method + ".csv", result, delimiter=',', fmt=['%.5f', '%.5f', '%d'])
+	np.savetxt(args.method + ".csv", result, header="x,y,target", comments='', delimiter=',', fmt=['%.5f', '%.5f', '%d'])
 
 if __name__ == "__main__":
 	main()
