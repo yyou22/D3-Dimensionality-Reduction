@@ -16,12 +16,9 @@ map_[8] = '#00E0D8';
 map_[9] = '#F4832F';
 
 $(document).ready(function() {
-    $('#helloworld')
-        .append('<span>Hello, jQuery! </span>')
     
     d3.select('#helloworld')
         .append('span')
-        .html('Hello, D3!');
 
     d3.csv('/data/pca.csv', function(d, i) {
         // convert to numerical values
@@ -32,8 +29,6 @@ $(document).ready(function() {
 
         return d
     }).then(function(data) {
-        // Your d3 drawing code comes here
-        // The below example draws a simple "scatterplot"
 
         var x1 = d3.scaleLinear()
                 .range([0, 30])
@@ -61,11 +56,22 @@ $(document).ready(function() {
                     return map_[d.target];
                 })
                 .on("mouseover", function(d, i) {
-                    console.log(d.target);
-                    d3.selectAll("circle.pt" + i).attr("r", 10)
+                    d3.selectAll("circle.pt" + i).attr("r", 10).attr("stroke-width", 1.5)
+                    d3.select('.canvas1')
+                        .append('text')
+                        .attr("id", "t" + i)
+                        .attr('x', function() {
+                            return x1(d.x) + 260 + 20;
+                        })
+                        .attr('y', function() {
+                            return y1(d.y) + 240 + 20;
+                        })
+                        .text("Class: " + String(d.target))
+                        .style("font-size", "34px")
                 })
                 .on("mouseout", function(d, i) {
-                    d3.selectAll("circle.pt" + i).attr("r", 2)
+                    d3.selectAll("circle.pt" + i).attr("r", 2).attr("stroke-width", 0.1)
+                    d3.select("#t" + i).remove();
                 })
     }) 
 
@@ -78,8 +84,6 @@ $(document).ready(function() {
 
         return d
     }).then(function(data) {
-        // Your d3 drawing code comes here
-        // The below example draws a simple "scatterplot"
 
         //console.log(data)
 
@@ -109,10 +113,22 @@ $(document).ready(function() {
                 return map_[d.target];
             })
             .on("mouseover", function(d, i) {
-                    d3.selectAll("circle.pt" + i).attr("r", 10)
+                d3.selectAll("circle.pt" + i).attr("r", 10).attr("stroke-width", 1.5)
+                d3.select('.canvas2')
+                    .append('text')
+                    .attr("id", "t" + i)
+                    .attr('x', function() {
+                        return x2(d.x) + 260 + 20;
+                    })
+                    .attr('y', function() {
+                        return y2(d.y) + 240 + 20;
+                    })
+                    .text("Class: " + String(d.target))
+                    .style("font-size", "34px")
             })
             .on("mouseout", function(d, i) {
-                d3.selectAll("circle.pt" + i).attr("r", 2)
+                d3.selectAll("circle.pt" + i).attr("r", 2).attr("stroke-width", 0.1)
+                d3.select("#t" + i).remove();
             })
     })
 
@@ -125,8 +141,6 @@ $(document).ready(function() {
 
         return d
     }).then(function(data) {
-        // Your d3 drawing code comes here
-        // The below example draws a simple "scatterplot"
 
         //console.log(data)
 
@@ -156,10 +170,22 @@ $(document).ready(function() {
                 return map_[d.target];
             })
             .on("mouseover", function(d, i) {
-                d3.selectAll("circle.pt" + i).attr("r", 10)
+                d3.selectAll("circle.pt" + i).attr("r", 10).attr("stroke-width", 1.5)
+                d3.select('.canvas3')
+                    .append('text')
+                    .attr("id", "t" + i)
+                    .attr('x', function() {
+                        return x3(d.x) + 260 + 20;
+                    })
+                    .attr('y', function() {
+                        return y3(d.y) + 240 + 20;
+                    })
+                    .text("Class: " + String(d.target))
+                    .style("font-size", "34px")
             })
             .on("mouseout", function(d, i) {
-                d3.selectAll("circle.pt" + i).attr("r", 2)
+                d3.selectAll("circle.pt" + i).attr("r", 2).attr("stroke-width", 0.1)
+                d3.select("#t" + i).remove();
             })
     }) 
 })
