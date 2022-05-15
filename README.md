@@ -2,10 +2,6 @@
 
 In this visualization exercise, three different dimensionality reduction methods (PCA, MDS and t-SNE) are applied on the 10,000 test set of Fashion MNIST dataset by projecting the high-dimensional data points onto a 2D plane. Each color represents a different class, and when users hover one dot in one visualization, the equivalent dots in the other visualizations will be highlighted with a change in radius and stroke width. The label of the specific data entry will be also indicated when a dot is being highlighted.
 
-Test: Test
-
-Test: Test
-
 ## Findings
 
 From the three visualizations, we can see that each dimensionality reduction method maps each data entry differently on the plane. In addition, each method results in varying domains for the two extracted features, which have been scaled accordingly on this page for the convenience of the viewers. For the Fashion MNIST dataset, t-SNE may be the best selection as we can see that entries from the same class are clustered in small groups with decent margin from other classes. On the other hand, MDS may not be the ideal choice of method for this dataset as it has a time complexity of O(N^3) and does not work well with large datasets.
@@ -25,3 +21,9 @@ Compare to the first D3 exercise, this visualization was a lot easier to achieve
 ## External Resources
 
 [D3 Mouse Events](http://bl.ocks.org/WilliamQLiu/76ae20060e19bf42d774)
+
+## Illustration
+
+<p align="center">
+    <img src="illustration.png" width="1000"\>
+</p>
