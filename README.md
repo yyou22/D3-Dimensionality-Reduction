@@ -14,9 +14,9 @@ Compare to the first D3 exercise, this visualization was a lot easier to achieve
 
 * First, pre-process the data by running `mnist.py` with the command `python mnist.py --method [pca/mds/tsne]`. This will generate a csv file of the dataset with reduced dimensionality for your selected method. Place all 3 csv files in the "staticdata" folder.
 
-* Then, navigate into "nodejs-started-code" folder and run `npm start` locally on your computer. It should start a local web serve at http://localhost:8000/ .
+* Then, navigate into "nodejs-started-code" folder and run `npm install` and then `npm start` locally on your computer. It should start a local web serve at http://localhost:8000/ .
 
-* Note: You will need to install NodeJS, pytorch & sklearn in order to run this code.
+* Note: You will need to install NodeJS, pytorch & sklearn in order to run this code. Please also note that this web app does not work with NodeJS 16. In order to run the application, you may need to downgrade Node to an earlier version like NodeJS 14.
 
 ## External Resources
 
