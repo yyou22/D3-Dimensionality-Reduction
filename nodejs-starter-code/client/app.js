@@ -20,6 +20,27 @@ $(document).ready(function() {
     d3.select('#helloworld')
         .append('span')
 
+    d3.select('.canvas1')
+        .append('text')
+        .attr('x', 20)
+        .attr('y', 50)
+        .text("PCA")
+        .style("font-size", "34px")
+
+    d3.select('.canvas2')
+        .append('text')
+        .attr('x', 20)
+        .attr('y', 50)
+        .text("MDS")
+        .style("font-size", "34px")
+
+    d3.select('.canvas3')
+        .append('text')
+        .attr('x', 20)
+        .attr('y', 50)
+        .text("t-SNE")
+        .style("font-size", "34px")
+
     d3.csv('/data/pca.csv', function(d, i) {
         // convert to numerical values
         d.x = +d.x
