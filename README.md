@@ -1,4 +1,4 @@
-# VD2: Dimensionality Reduction
+# Dimensionality Reduction Visualization
 
 In this visualization exercise, three different dimensionality reduction methods (PCA, MDS and t-SNE) are applied on the 10,000 test set of Fashion MNIST dataset by projecting the high-dimensional data points onto a 2D plane. Each color represents a different class, and when users hover one dot in one visualization, the equivalent dots in the other visualizations will be highlighted with a change in radius and stroke width. The label of the specific data entry will be also indicated when a dot is being highlighted.
 
